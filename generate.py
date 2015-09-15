@@ -116,9 +116,16 @@ def generate_characters():
             if getattr(module, "SUMMONS", None):
                 f.write("\n{0}{0}<h2><b>Summons:</b></h2>\n{0}{0}<ul>\n".format(TAB))
                 for summon in module.SUMMONS:
-                    summoners = sorted(SUMMONS[summon], key=lambda x: x == module.NAME and 0 or CHARACTERS[x][1])
-                    summoners[0] = _get_name(summoners[0])
-                    f.write(FAMILY_SUMMONS_LINE.format(summon, ", ".join(summoners)))
+                    summoners = sorted(SUMMONS[summon], key=lambda x: 0 if x == module.NAME else CHARACTERS[x][1])
+                    new = []
+                    for i, summoner in enumerate(summoners):
+                        if i == 0:
+                            new.append(_get_name(summoner))
+                        else:
+                            if summoner in CHARACTERS:
+                                summoner = CHAR_REF.format(CHARACTERS[summoner][0], summoner)
+                            new.append(summoner)
+                    f.write(FAMILY_SUMMONS_LINE.format(summon, ", ".join(new)))
                 f.write("{0}{0}</ul>\n".format(TAB))
             else:
                 f.write("\n{0}{0}<h2><b>Summons:</b> None</h2>\n".format(TAB))
