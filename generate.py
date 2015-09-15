@@ -21,6 +21,8 @@ LINE = (TAB * 2) + "<h2><b>{0}:</b> {1}</h2>\n"
 FAMILY_SUMMONS_LINE = (TAB * 3) + "<li><i>{0}</i> ({1})</li>\n"
 CHARACTER_LINE = (TAB * 4) + "<li><b>{0}<a href=\"{1}.html\" title=\"{2}\">{2}</a></b></li>\n"
 
+PARAGRAPH = "{0}{0}{0}</ul>\n{0}{0}</p>\n\n{0}{0}<p>\n{0}{0}{0}<h2>{1}</h2>\n{0}{0}{0}<ul>\n"
+
 CHAR_REF = "<a href=\"{0}.html\" title=\"{1}\">{1}</a>"
 
 ORDER = ("Name", "Element", "Class", "Weapon", "Birth", "Birth location",
@@ -40,6 +42,12 @@ def _get_name(name):
     if file in new: # support for Liakin and possibly others
         return file
     return new[0]
+
+def _get_rank(name):
+    module = CHARACTERS[name][1]
+    if getattr(module, "LETTER", None):
+        return ord(module.LETTER.upper()) - 64
+    return CHARACTERS[name][2]
 
 def parse():
     waiting = []
@@ -151,7 +159,7 @@ def generate_character_index():
         for c in them:
             f.write(CHARACTER_LINE.format("{0}: ".format(CHARACTERS[c][1].LETTER), CHARACTERS[c][0], c))
 
-        f.write("{0}{0}{0}</ul>\n{0}{0}</p>\n\n{0}{0}<p>\n{0}{0}{0}<h2>S-Team</h2>\n{0}{0}{0}<ul>\n".format(TAB))
+        f.write(PARAGRAPH.format(TAB, "S-Team"))
 
         s_team = [x for x in CHARACTERS if getattr(CHARACTERS[x][1], "S_TEAM_RANK", None) is not None]
         s_team.sort(key=lambda x: CHARACTERS[x][1].S_TEAM_RANK)
@@ -160,7 +168,7 @@ def generate_character_index():
         for c in s_team:
             f.write(CHARACTER_LINE.format("{0}: ".format(CHARACTERS[c][1].S_TEAM_RANK), CHARACTERS[c][0], c))
 
-        f.write("{0}{0}{0}</ul>\n{0}{0}</p>\n\n{0}{0}<p>\n{0}{0}{0}<h2>The Great Four</h2>\n{0}{0}{0}<ul>\n".format(TAB))
+        f.write(PARAGRAPH.format(TAB, "The Great Four"))
 
         great_four = [x for x in CHARACTERS if getattr(CHARACTERS[x][1], "GREAT_FOUR", None)]
         great_four.sort(key=lambda x: CHARACTERS[x][2])
@@ -168,13 +176,22 @@ def generate_character_index():
         for c in great_four:
             f.write(CHARACTER_LINE.format("", CHARACTERS[c][0], c))
 
-        f.write("{0}{0}{0}</ul>\n{0}{0}</p>\n\n{0}{0}<p>\n{0}{0}{0}<h2>Other</h2>\n{0}{0}{0}<ul>\n".format(TAB))
+        f.write(PARAGRAPH.format(TAB, "Sumansians"))
 
-        other = [x for x in CHARACTERS if x not in them + s_team + great_four]
+        sumansians = [x for x in CHARACTERS if getattr(CHARACTERS[x][1], "SUMANSIAN", None)]
+        sumansians.sort(key=_get_rank)
+
+        for c in sumansians:
+            f.write(CHARACTER_LINE.format("", CHARACTERS[c][0], c))
+
+        other = [x for x in CHARACTERS if x not in them + s_team + great_four + sumansians]
         other.sort(key=lambda x: CHARACTERS[x][2])
 
-        for c in other:
-            f.write(CHARACTER_LINE.format("", CHARACTERS[c][0], c))
+        if other:
+            f.write(PARAGRAPH.format(TAB, "Other"))
+
+            for c in other:
+                f.write(CHARACTER_LINE.format("", CHARACTERS[c][0], c))
 
         f.write("{0}{0}{0}</ul>\n{0}{0}</p>\n\n{0}{0}<p>".format(TAB))
         f.write(CHAR_REF.format("../index", "Back to Index"))
