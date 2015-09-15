@@ -1,0 +1,27 @@
+NOT_READY = True
+
+FILE = "U"
+
+NAME = "U"
+
+CLASS = "Assassin"
+
+WEAPON = ""
+
+BIRTH = ""
+
+BIRTH_LOCATION = ""
+
+LETTER = "U"
+
+RECRUITMENT_ORDER = 3
+
+SUMMARY = ""
+
+ABILITIES = ""
+
+BACKSTORY = ""
+
+HIGHLIGHTS = ""
+
+SUMMONS = ()
