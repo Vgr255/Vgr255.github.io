@@ -20,6 +20,8 @@ SUMANSIAN = True
 
 SUMANSIAN_TWIN = "Isa"
 
+GREAT_FOUR = True
+
 SUMMARY = ""
 
 ABILITIES = ""

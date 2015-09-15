@@ -16,6 +16,8 @@ SUMANSIAN = True
 
 SUMANSIAN_TWIN = "Michael Cormier"
 
+GREAT_FOUR = True
+
 SUMMARY = ""
 
 ABILITIES = ""

@@ -92,7 +92,8 @@ def generate_characters():
                 isstr = isinstance(value, str) and not value.isdigit()
                 f.write(LINE.format(item, "{0}{1}{2}".format("<i>" if isstr else "", value, "</i>" if isstr else "")))
 
-            f.write(LINE.format("Sumansian", "Yes" if getattr(module, "SUMANSIAN", False) else "No"))
+            great_four = " [One of the Great Four]" if getattr(module, "GREAT_FOUR", False) else ""
+            f.write(LINE.format("Sumansian", ("Yes" if getattr(module, "SUMANSIAN", False) else "No") + great_four))
 
             value = twin = getattr(module, "SUMANSIAN_TWIN", None)
             isstr = isinstance(value, str) and value != "Unknown"

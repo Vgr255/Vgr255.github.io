@@ -18,6 +18,8 @@ SUMANSIAN = True
 
 SUMANSIAN_TWIN = "Marlene"
 
+GREAT_FOUR = True
+
 SUMMARY = ""
 
 ABILITIES = ""

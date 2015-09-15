@@ -18,6 +18,8 @@ SUMANSIAN = True
 
 SUMANSIAN_TWIN = "Zoe"
 
+GREAT_FOUR = True
+
 SUMMARY = "Isa is a really powerful ally, able to adapt to many situations and withstand large amounts of damage. Even while attacked, she can attack and kill those who attack her. She's extremely powerful, and wields a powerful spear."
 
 ABILITIES = "Besides being able to adapt to any situation, she can also easily kill most of her enemies from deviated energy bursts. She has a good physical strength, albeit not as much as Noémie."
