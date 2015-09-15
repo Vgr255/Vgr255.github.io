@@ -1,5 +1,3 @@
-NOT_READY = True
-
 FILE = "Victor"
 
 NAME = "Victor Morika"

@@ -1,5 +1,3 @@
-NOT_READY = True
-
 FILE = "Y"
 
 NAME = "Y" # anyone has a better name?
