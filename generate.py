@@ -9,14 +9,19 @@ import os
 BACKGROUND_COLOR = 0xDDDDDD
 TABSIZE = 2
 
+HEADER = "<!DOCTYPE html>\n<!-- AUTOMATICALLY GENERATED HTML CODE -->\n\n<meta charset=\"utf-8\" />\n\n<html>\n"
+
+LINK = "https://github.com/Vgr255/Vgr255.github.io"
+
 # Stop editing here
 
 TAB = " " * TABSIZE
 
 LINE = (TAB * 2) + "<h2><b>{0}:</b> {1}</h2>\n"
 FAMILY_SUMMONS_LINE = (TAB * 3) + "<li><i>{0}</i> ({1})</li>\n"
+CHARACTER_LINE = (TAB * 4) + "<li><b>{0}<a href=\"{1}.html\" title=\"{2}\">{2}</a></b></li>\n"
 
-CHAR_REF = "<a href=\"{0}.html\" title={1}>{1}</a>"
+CHAR_REF = "<a href=\"{0}.html\" title=\"{1}\">{1}</a>"
 
 ORDER = ("Name", "Element", "Class", "Weapon", "Birth", "Birth location",
          "Death", "Death location", "Letter", "Recruitment order", "S-Team Rank")
@@ -50,24 +55,24 @@ def parse():
         # sort characters by their letter if applicable, then by their S-Team rank, and the rest (Marlene) go last
 
         if getattr(module, "LETTER", None):
-            CHARACTERS[module.NAME] = (module.FILE, ord(module.LETTER.upper()) - 64)
+            CHARACTERS[module.NAME] = (module.FILE, module, ord(module.LETTER.upper()) - 64)
             total += 1
 
         elif getattr(module, "S_TEAM_RANK", None) is not None:
-            waiting.append((module.NAME, module.FILE, int(module.S_TEAM_RANK)))
+            waiting.append((module, int(module.S_TEAM_RANK)))
 
         else:
-            waiting.append((module.NAME, module.FILE, num))
+            waiting.append((module, num))
             num += 1
 
         for summon in getattr(module, "SUMMONS", []):
             SUMMONS[summon].add(module.NAME)
 
-    waiting.sort(key=lambda x: x[2])
+    waiting.sort(key=lambda x: x[1])
 
-    for character, link, rank in waiting:
+    for module, rank in waiting:
         total += 1
-        CHARACTERS[character] = (link, total)
+        CHARACTERS[module.NAME] = (module.FILE, module, total)
 
 def generate_characters():
     for file in os.listdir(os.path.join(os.getcwd(), "Characters", "_data")):
@@ -77,8 +82,7 @@ def generate_characters():
         module = importlib.import_module("Characters._data." + file[:-3])
 
         with open(os.path.join(os.getcwd(), "Characters", "{0}.html".format(module.FILE)), "w", encoding="utf-8") as f:
-            f.write("<!DOCTYPE html>\n<! AUTOMATICALLY GENERATED HTML CODE !>\n\n")
-            f.write("<meta charset=\"utf-8\" />\n\n<html>\n")
+            f.write(HEADER)
             f.write("{0}<head>\n{0}{0}<title>{1}</title>\n{0}</head>\n\n".format(TAB, module.NAME))
             f.write("{0}<body style=\"background-color:#{1:06x};\">\n".format(TAB, BACKGROUND_COLOR))
             for item in ORDER:
@@ -111,7 +115,7 @@ def generate_characters():
             if getattr(module, "SUMMONS", None):
                 f.write("\n{0}{0}<h2><b>Summons:</b></h2>\n{0}{0}<ul>\n".format(TAB))
                 for summon in module.SUMMONS:
-                    summoners = sorted(SUMMONS[summon], key=lambda x: 0 if x == module.NAME else CHARACTERS[x][1])
+                    summoners = sorted(SUMMONS[summon], key=lambda x: 0 if x == module.NAME else CHARACTERS[x][2])
                     new = []
                     for i, summoner in enumerate(summoners):
                         if i == 0:
@@ -131,8 +135,46 @@ def generate_characters():
                 else:
                     f.write("\n{0}{0}<h2><b>{1}:</b> None</h2>\n".format(TAB, item))
 
-            f.write("\n{0}{0}<p><b><a href=\"../index.html\" title=\"Back to Index\">Back to Index</a></b></p>\n\n</html>\n".format(TAB))
+            f.write("\n{0}{0}<p><b>{1}</b></p>\n".format(TAB, CHAR_REF.format("index", "Back to Character Index")))
+            f.write("{0}{0}<p><b>{1}</b></p>\n\n</html>\n".format(TAB, CHAR_REF.format("../index", "Back to Index")))
+
+def generate_character_index():
+    with open(os.path.join(os.getcwd(), "Characters", "index.html"), "w", encoding="utf-8") as f:
+        f.write(HEADER)
+        f.write("{0}<head>\n{0}{0}<title>Characters Index</title>\n{0}</head>\n\n".format(TAB))
+        f.write("{0}<body style=\"background-color:#{1:06x};\"\n".format(TAB, BACKGROUND_COLOR))
+        f.write("{0}{0}<h1>Characters</h1>\n{0}{0}<p>\n{0}{0}{0}<h2>\"Them\"</h2>\n{0}{0}{0}<ul>\n".format(TAB))
+
+        them = [x for x in CHARACTERS if getattr(CHARACTERS[x][1], "LETTER", None)]
+        them.sort(key=lambda x: CHARACTERS[x][2])
+
+        for c in them:
+            f.write(CHARACTER_LINE.format("{0}: ".format(CHARACTERS[c][1].LETTER), CHARACTERS[c][0], CHARACTERS[c][1].NAME))
+
+        f.write("{0}{0}{0}</ul>\n{0}{0}</p>\n\n{0}{0}<p>\n{0}{0}{0}<h2>S-Team</h2>\n{0}{0}{0}<ul>\n".format(TAB))
+
+        s_team = [x for x in CHARACTERS if getattr(CHARACTERS[x][1], "S_TEAM_RANK", None) is not None]
+        s_team.sort(key=lambda x: CHARACTERS[x][1].S_TEAM_RANK)
+        s_team.append(s_team.pop(0)) # Handle Arya
+
+        for c in s_team:
+            f.write(CHARACTER_LINE.format("{0}: ".format(CHARACTERS[c][1].S_TEAM_RANK), CHARACTERS[c][0], CHARACTERS[c][1].NAME))
+
+        f.write("{0}{0}{0}</ul>\n{0}{0}</p>\n\n{0}{0}<p>\n{0}{0}{0}<h2>The Great Four</h2>\n{0}{0}{0}<ul>\n".format(TAB))
+
+        great_four = [x for x in CHARACTERS if getattr(CHARACTERS[x][1], "GREAT_FOUR", None)]
+        great_four.sort(key=lambda x: CHARACTERS[x][2])
+
+        for c in great_four:
+            f.write(CHARACTER_LINE.format("", CHARACTERS[c][0], CHARACTERS[c][1].NAME))
+
+        f.write("{0}{0}{0}</ul>\n{0}{0}</p>\n{0}{0}<p>".format(TAB))
+        f.write(CHAR_REF.format("../index", "Back to Index"))
+        f.write("</p>\n{0}{0}<p>".format(TAB))
+        f.write(CHAR_REF.format(LINK, "Source Code on GitHub"))
+        f.write("</p>\n\n{0}</body>\n</html>\n".format(TAB))
 
 if __name__ == "__main__":
     parse()
     generate_characters()
+    generate_character_index()
