@@ -182,7 +182,25 @@ def generate_character_index():
         f.write(CHAR_REF.format(LINK, "Source Code on GitHub"))
         f.write("</p>\n\n{0}</body>\n</html>\n".format(TAB))
 
+def generate_index():
+    with open(os.path.join(os.getcwd(), "index.html"), "w", encoding="utf-8") as f:
+        f.write(HEADER)
+        f.write("{0}<head>\n{0}{0}<title>Vgr's Personal Website</title>\n{0}</head>\n\n".format(TAB))
+        f.write("{0}<body style=\"background-color:#{1:06x};\">\n".format(TAB, BACKGROUND_COLOR))
+
+        folders = []
+
+        for folder in os.listdir(os.getcwd()):
+            if os.path.isdir(os.path.join(os.getcwd(), folder)) and folder not in ("__pycache__", ".git"):
+                folders.append(folder)
+
+        for folder in folders:
+            f.write("{0}{0}<h1>{1}</h1>\n".format(TAB, CHAR_REF.format("/".join((folder, "index")), folder)))
+
+        f.write("\n{0}{0}<p><a href=\"{1}\" title=\"{2}\">{2}</a></p>\n{0}</body>\n</html>\n".format(TAB, LINK, "Source Code on GitHub"))
+
 if __name__ == "__main__":
     parse()
     generate_characters()
     generate_character_index()
+    generate_index()
