@@ -90,7 +90,7 @@ def get_sumansians():
 
     return ret
 
-def parse():
+def parse_characters():
     waiting = []
     num = 10
     total = 0
@@ -248,19 +248,24 @@ def generate_index():
         f.write("{0}<head>\n{0}{0}<title>Vgr's Personal Website</title>\n{0}</head>\n\n".format(TAB))
         f.write("{0}<body style=\"background-color:#{1:06x};\">\n".format(TAB, BACKGROUND_COLOR))
 
-        folders = []
+        folders = [os.getcwd()]
+        data = []
 
-        for folder in os.listdir(os.getcwd()):
-            if os.path.isdir(os.path.join(os.getcwd(), folder)) and folder not in ("__pycache__", ".git"):
-                folders.append(folder)
+        while folders:
+            folder = folders.pop(0)
 
-        for folder in folders:
-            f.write("{0}{0}<h1>{1}</h1>\n".format(TAB, CHAR_REF.format("/".join((folder, "index")), folder)))
+            for file in os.listdir(folder):
+                if os.path.isdir(os.path.join(folder, file)) and not file.startswith((".", "_")):
+                    folders.append(os.path.join(folder, file))
+                    data.append(os.path.join(folder, file))
+
+        for folder in data:
+            f.write("{0}{0}<h1>{1}</h1>\n".format(TAB, CHAR_REF.format("/".join((folder[len(os.getcwd())+1:].replace(os.sep, "/"), "index")), os.path.split(folder)[1])))
 
         f.write("\n{0}{0}<p><a href=\"{1}\" title=\"{2}\">{2}</a></p>\n{0}</body>\n</html>\n".format(TAB, LINK, "Source Code on GitHub"))
 
 if __name__ == "__main__":
-    parse()
+    parse_characters()
     generate_characters()
     generate_character_index()
     generate_index()
