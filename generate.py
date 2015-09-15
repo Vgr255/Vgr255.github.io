@@ -32,6 +32,8 @@ TEXTS = ("Summary", "Abilities", "Backstory", "Highlights")
 
 CHARACTERS = {}
 
+SUMANSIANS = set()
+
 SUMMONS = collections.defaultdict(set)
 
 def _get_name(name):
@@ -43,11 +45,50 @@ def _get_name(name):
         return file
     return new[0]
 
-def _get_rank(name):
-    module = CHARACTERS[name][1]
-    if getattr(module, "LETTER", None):
-        return ord(module.LETTER.upper()) - 64
-    return CHARACTERS[name][2]
+def get_sumansians():
+    new = []
+    rest = set()
+    for sumansian in (x for x in CHARACTERS if getattr(CHARACTERS[x][1], "SUMANSIAN", None)):
+        if sumansian in new or sumansian in rest:
+            continue
+        new.append(sumansian)
+        for name, twin in SUMANSIANS:
+            if name is None:
+                rest.add(twin)
+            elif twin is None:
+                rest.add(name)
+            elif sumansian == name:
+                new.append(twin)
+            elif sumansian == twin:
+                new.append(name)
+
+    pairs = list(zip(new[::2], new[1::2]))
+
+    final = []
+    num = 0
+
+    for c1, c2 in pairs:
+        m1 = CHARACTERS[c1][1]
+        m2 = CHARACTERS[c2][1]
+
+        v1 = getattr(m1, "S_TEAM_RANK", ord(getattr(m1, "LETTER", "_")))
+        v2 = getattr(m2, "S_TEAM_RANK", ord(getattr(m2, "LETTER", "_")))
+
+        if v1 < v2:
+            final.append(((c1, v1), (c2, v2)))
+        else:
+            final.append(((c2, v2), (c1, v1)))
+
+    final.sort(key=lambda x: x[0][1])
+
+    ret = []
+
+    for tup in zip((x[0][0] for x in final), (x[1][0] for x in final)):
+        ret.extend(tup)
+
+    ret.extend(rest)
+
+    return ret
 
 def parse():
     waiting = []
@@ -72,6 +113,9 @@ def parse():
         else:
             waiting.append((module, num))
             num += 1
+
+        if getattr(module, "SUMANSIAN", None):
+            SUMANSIANS.add(frozenset({module.NAME, getattr(module, "SUMANSIAN_TWIN", None)}))
 
         for summon in getattr(module, "SUMMONS", []):
             SUMMONS[summon].add(module.NAME)
@@ -178,8 +222,7 @@ def generate_character_index():
 
         f.write(PARAGRAPH.format(TAB, "Sumansians"))
 
-        sumansians = [x for x in CHARACTERS if getattr(CHARACTERS[x][1], "SUMANSIAN", None)]
-        sumansians.sort(key=_get_rank)
+        sumansians = get_sumansians()
 
         for c in sumansians:
             f.write(CHARACTER_LINE.format("", CHARACTERS[c][0], c))
