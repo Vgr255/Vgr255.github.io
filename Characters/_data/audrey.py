@@ -14,8 +14,6 @@ LETTER = "O"
 
 RECRUITMENT_ORDER = 9
 
-S_TEAM_RANK = 1337
-
 SUMMARY = "Audrey can fire bursts of energy through her body. She can jump quite high and fast, which she does to move around. She’s been on Earth many times, for extended periods of time. She’s been monitoring the S-Team for a while, and also participated in the final meeting before The Great Battle, with Jeremy Alexander, Luke Walker, Quan and Michael Cormier."
 
 ABILITIES = "She can use her trusty spear, the Gungnir, to jump and dispatch enemies easily. She’s a good magician and she can summon some good creatures as well. She’s pretty powerful, and is as ever omniscient, seeing over what unfolds."
