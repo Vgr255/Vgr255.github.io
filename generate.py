@@ -149,7 +149,7 @@ def generate_character_index():
         them.sort(key=lambda x: CHARACTERS[x][2])
 
         for c in them:
-            f.write(CHARACTER_LINE.format("{0}: ".format(CHARACTERS[c][1].LETTER), CHARACTERS[c][0], CHARACTERS[c][1].NAME))
+            f.write(CHARACTER_LINE.format("{0}: ".format(CHARACTERS[c][1].LETTER), CHARACTERS[c][0], c))
 
         f.write("{0}{0}{0}</ul>\n{0}{0}</p>\n\n{0}{0}<p>\n{0}{0}{0}<h2>S-Team</h2>\n{0}{0}{0}<ul>\n".format(TAB))
 
@@ -158,7 +158,7 @@ def generate_character_index():
         s_team.append(s_team.pop(0)) # Handle Arya
 
         for c in s_team:
-            f.write(CHARACTER_LINE.format("{0}: ".format(CHARACTERS[c][1].S_TEAM_RANK), CHARACTERS[c][0], CHARACTERS[c][1].NAME))
+            f.write(CHARACTER_LINE.format("{0}: ".format(CHARACTERS[c][1].S_TEAM_RANK), CHARACTERS[c][0], c))
 
         f.write("{0}{0}{0}</ul>\n{0}{0}</p>\n\n{0}{0}<p>\n{0}{0}{0}<h2>The Great Four</h2>\n{0}{0}{0}<ul>\n".format(TAB))
 
@@ -166,9 +166,17 @@ def generate_character_index():
         great_four.sort(key=lambda x: CHARACTERS[x][2])
 
         for c in great_four:
-            f.write(CHARACTER_LINE.format("", CHARACTERS[c][0], CHARACTERS[c][1].NAME))
+            f.write(CHARACTER_LINE.format("", CHARACTERS[c][0], c))
 
-        f.write("{0}{0}{0}</ul>\n{0}{0}</p>\n{0}{0}<p>".format(TAB))
+        f.write("{0}{0}{0}</ul>\n{0}{0}</p>\n\n{0}{0}<p>\n{0}{0}{0}<h2>Other</h2>\n{0}{0}{0}<ul>\n".format(TAB))
+
+        other = [x for x in CHARACTERS if x not in them + s_team + great_four]
+        other.sort(key=lambda x: CHARACTERS[x][2])
+
+        for c in other:
+            f.write(CHARACTER_LINE.format("", CHARACTERS[c][0], c))
+
+        f.write("{0}{0}{0}</ul>\n{0}{0}</p>\n\n{0}{0}<p>".format(TAB))
         f.write(CHAR_REF.format("../index", "Back to Index"))
         f.write("</p>\n{0}{0}<p>".format(TAB))
         f.write(CHAR_REF.format(LINK, "Source Code on GitHub"))
