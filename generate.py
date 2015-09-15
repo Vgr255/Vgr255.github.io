@@ -142,7 +142,7 @@ def generate_character_index():
     with open(os.path.join(os.getcwd(), "Characters", "index.html"), "w", encoding="utf-8") as f:
         f.write(HEADER)
         f.write("{0}<head>\n{0}{0}<title>Characters Index</title>\n{0}</head>\n\n".format(TAB))
-        f.write("{0}<body style=\"background-color:#{1:06x};\"\n".format(TAB, BACKGROUND_COLOR))
+        f.write("{0}<body style=\"background-color:#{1:06x};\">\n".format(TAB, BACKGROUND_COLOR))
         f.write("{0}{0}<h1>Characters</h1>\n{0}{0}<p>\n{0}{0}{0}<h2>\"Them\"</h2>\n{0}{0}{0}<ul>\n".format(TAB))
 
         them = [x for x in CHARACTERS if getattr(CHARACTERS[x][1], "LETTER", None)]
