@@ -6,7 +6,7 @@ CLASS = None
 
 WEAPON = ""
 
-BIRTH = ""
+BIRTH = "May 26th, 1996"
 
 BIRTH_LOCATION = ""
 

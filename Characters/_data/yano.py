@@ -1,6 +1,6 @@
-FILE = "Y"
+FILE = "Yano"
 
-NAME = "Y" # anyone has a better name?
+NAME = "Yanò"
 
 CLASS = None
 

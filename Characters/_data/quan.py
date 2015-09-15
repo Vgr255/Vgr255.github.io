@@ -6,7 +6,7 @@ CLASS = "Mime"
 
 WEAPON = "Knowledge"
 
-BIRTH = "May 2nd, 1987"
+BIRTH = "April 2nd, 1987"
 
 BIRTH_LOCATION = "Næstved, Denmark, Earth"
 

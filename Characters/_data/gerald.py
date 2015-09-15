@@ -26,4 +26,4 @@ BACKSTORY = ""
 
 HIGHLIGHTS = ""
 
-SUMMONS = ("Atomos", "Anima", "Fenrir", "Golem", "Diablos", "Griever", "Hydra")
+SUMMONS = ("Atomos", "Anima", "Fenrir", "Diablos", "Griever", "Hydra")

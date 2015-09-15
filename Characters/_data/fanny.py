@@ -6,7 +6,7 @@ CLASS = "Beastmaster"
 
 WEAPON = "Animals"
 
-BIRTH = "October 22nd, 1886"
+BIRTH = "September 22nd, 1886"
 
 BIRTH_LOCATION = "Void"
 

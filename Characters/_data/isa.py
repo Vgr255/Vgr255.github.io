@@ -6,9 +6,9 @@ CLASS = "Darwiner"
 
 WEAPON = "Energy bursts"
 
-BIRTH = "January 13th, 1989"
+BIRTH = "October 21st, 1624"
 
-BIRTH_LOCATION = "Lewes, United Kingdom, Earth"
+BIRTH_LOCATION = "Sumansa"
 
 LETTER = "I"
 
@@ -30,4 +30,4 @@ HIGHLIGHTS = "When Audrey found out that they were being hunted down, she told R
 
 FAMILY = (("Fanny", "Sumansian sister"), ("???", "Sumansian brother"))
 
-SUMMONS = ("Calamity", "Cerberus", "Pandemonium", "Phantom")
+SUMMONS = ("Calamity", "Cerberus", "Pandemonium", "Phantom", "Golem")

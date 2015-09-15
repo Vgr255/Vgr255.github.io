@@ -6,9 +6,9 @@ CLASS = "Master"
 
 WEAPON = ""
 
-BIRTH = ""
+BIRTH = "October 21st, 1624"
 
-BIRTH_LOCATION = ""
+BIRTH_LOCATION = "Sumansa"
 
 LETTER = "Z"
 
@@ -30,4 +30,4 @@ HIGHLIGHTS = ""
 
 FAMILY = (("Fanny", "Sumansian sister"), ("???", "Sumansian brother"))
 
-SUMMONS = ("Tritoch", "Unicorn", "Calamity", "Crusador", "Knights of the Round")
+SUMMONS = ("Tritoch", "Unicorn", "Calamity", "Crusador", "Knights of the Round", "Golem")

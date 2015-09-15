@@ -6,9 +6,9 @@ CLASS = "Mystic Fighter"
 
 WEAPON = ""
 
-BIRTH = ""
+BIRTH = "October 21st, 1624"
 
-BIRTH_LOCATION = ""
+BIRTH_LOCATION = "Sumansa"
 
 S_TEAM_RANK = 9
 

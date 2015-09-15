@@ -22,4 +22,4 @@ BACKSTORY = ""
 
 HIGHLIGHTS = ""
 
-SUMMONS = ("Bismark", "Golem", "Diablos", "Knights of the Round")
+SUMMONS = ("Bismark", "Diablos", "Knights of the Round")

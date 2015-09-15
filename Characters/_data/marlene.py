@@ -6,9 +6,9 @@ CLASS = "Exploder"
 
 WEAPON = ""
 
-BIRTH = ""
+BIRTH = "October 21st, 1624"
 
-BIRTH_LOCATION = ""
+BIRTH_LOCATION = "Sumansa"
 
 SUMANSIAN = True
 
@@ -24,4 +24,4 @@ BACKSTORY = ""
 
 HIGHLIGHTS = ""
 
-SUMMONS = ()
+SUMMONS = ("Golem",)
