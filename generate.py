@@ -136,7 +136,7 @@ def generate_characters():
                     f.write("\n{0}{0}<h2><b>{1}:</b> None</h2>\n".format(TAB, item))
 
             f.write("\n{0}{0}<p><b>{1}</b></p>\n".format(TAB, CHAR_REF.format("index", "Back to Character Index")))
-            f.write("{0}{0}<p><b>{1}</b></p>\n\n</html>\n".format(TAB, CHAR_REF.format("../index", "Back to Index")))
+            f.write("{0}{0}<p><b>{1}</b></p>\n\n{0}</body>\n</html>\n".format(TAB, CHAR_REF.format("../index", "Back to Index")))
 
 def generate_character_index():
     with open(os.path.join(os.getcwd(), "Characters", "index.html"), "w", encoding="utf-8") as f:
