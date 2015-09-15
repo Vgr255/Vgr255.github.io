@@ -6,7 +6,7 @@ CLASS = "Oracle"
 
 WEAPON = "Staff"
 
-BIRTH = "January 13th, 1935"
+BIRTH = "January 13th, 1933"
 
 BIRTH_LOCATION = "Portland, Oregon, USA, Earth"
 
