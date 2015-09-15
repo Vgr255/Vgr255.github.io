@@ -14,7 +14,7 @@ BIRTH_LOCATION = ""
 
 LETTER = "W"
 
-RECRUITMENT_ORDER = 11
+RECRUITMENT_ORDER = 10
 
 SUMMARY = ""
 
@@ -24,4 +24,4 @@ BACKSTORY = ""
 
 HIGHLIGHTS = ""
 
-SUMMONS = ()
+SUMMONS = ("Tonberry", "Grimnir", "Griever", "Starlet")

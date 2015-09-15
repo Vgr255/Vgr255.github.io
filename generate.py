@@ -47,9 +47,6 @@ def parse():
 
         module = importlib.import_module("Characters._data." + file[:-3])
 
-        if getattr(module, "NOT_READY", None):
-            continue # while the characters are still being written out, use this as a means to opt-out specific modules
-
         # sort characters by their letter if applicable, then by their S-Team rank, and the rest (Marlene) go last
 
         if getattr(module, "LETTER", None):
@@ -80,7 +77,7 @@ def generate_characters():
         module = importlib.import_module("Characters._data." + file[:-3])
 
         if getattr(module, "NOT_READY", None):
-            continue
+            continue # while the characters are still being written out, use this as a means to opt-out specific modules
 
         with open(os.path.join(os.getcwd(), "Characters", "{0}.html".format(module.FILE)), "w", encoding="utf-8") as f:
             f.write("<!DOCTYPE html>\n<! AUTOMATICALLY GENERATED HTML CODE !>\n\n")

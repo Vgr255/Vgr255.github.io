@@ -24,4 +24,4 @@ BACKSTORY = ""
 
 HIGHLIGHTS = ""
 
-SUMMONS = ()
+SUMMONS = ("Ifrit", "Brothers", "Helltrain", "Diablos", "Palidor", "Zona")

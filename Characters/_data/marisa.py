@@ -34,4 +34,4 @@ HIGHLIGHTS = ""
 
 FAMILY = (("Anabella Liakin", "Girlfriend"),)
 
-SUMMONS = ()
+SUMMONS = ("Asura", "Kirin", "Sylph", "Bahamut", "Ark")

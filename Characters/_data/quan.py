@@ -6,13 +6,13 @@ CLASS = "Mime"
 
 WEAPON = "Knowledge"
 
-BIRTH = "April 2nd, 1987"
+BIRTH = "May 2nd, 1987"
 
 BIRTH_LOCATION = "Næstved, Denmark, Earth"
 
 LETTER = "Q"
 
-RECRUITMENT_ORDER = 13
+RECRUITMENT_ORDER = 12
 
 SUMMARY = "Quan is a young-looking boy who can replicate what he saw other people do, and learn it. Just like his friends, when he dies outside of the Void, he automatically gets back in it, in the way he was when he left it. Unlike the others, though, he doesn't forget what happened before he died. He often uses that skill to go on Earth, gather information, die and relay the information to his peers, acting as an informant."
 

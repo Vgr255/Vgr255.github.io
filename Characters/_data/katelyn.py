@@ -14,7 +14,7 @@ BIRTH_LOCATION = "Montpelier, Vermont, USA, Earth"
 
 LETTER = "K"
 
-RECRUITMENT_ORDER = 12
+RECRUITMENT_ORDER = 11
 
 S_TEAM_RANK = 1
 

@@ -14,7 +14,7 @@ BIRTH_LOCATION = "Manhattan, New Jersey, USA, Earth"
 
 LETTER = "M"
 
-RECRUITMENT_ORDER = 15
+RECRUITMENT_ORDER = 14
 
 S_TEAM_RANK = 3
 

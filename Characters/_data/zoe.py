@@ -32,4 +32,4 @@ HIGHLIGHTS = ""
 
 FAMILY = (("Fanny", "Sumansian sister"), ("???", "Sumansian brother"))
 
-SUMMONS = ()
+SUMMONS = ("Tritoch", "Unicorn", "Calamity", "Crusador", "Knights of the Round")

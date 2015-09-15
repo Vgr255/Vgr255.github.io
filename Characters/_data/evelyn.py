@@ -12,7 +12,7 @@ BIRTH_LOCATION = "Seattle, Washington, USA, Earth"
 
 LETTER = "E"
 
-RECRUITMENT_ORDER = 14
+RECRUITMENT_ORDER = 13
 
 SUMMARY = "Evelyn is a very gifted magician, being able to control almost all existing magics in existence. She lacks physical strength, however her knowledge of advanced spells more than make up for it. She will very rarely take direct action in battles, staying in the back and supporting with spells of her own."
 

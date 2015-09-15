@@ -34,4 +34,4 @@ HIGHLIGHTS = ""
 
 FAMILY = (("Jeremy Alexander", "Sumansian twin / Boyfriend"), ("Arya Alexander", "Daughter"))
 
-SUMMONS = ()
+SUMMONS = ("Ramuh", "Quetzal", "Ixion", "Phantom", "Ark")

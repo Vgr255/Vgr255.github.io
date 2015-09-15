@@ -24,4 +24,4 @@ BACKSTORY = ""
 
 HIGHLIGHTS = ""
 
-SUMMONS = ()
+SUMMONS = ("Bahamut Kai", "Astaroth", "Grimnir", "Palidor")

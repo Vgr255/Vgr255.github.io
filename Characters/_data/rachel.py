@@ -6,7 +6,7 @@ CLASS = "Erudite"
 
 WEAPON = "Focused energy projectiles"
 
-BIRTH = "June 16th, 1952"
+BIRTH = "June 17th, 1952"
 
 BIRTH_LOCATION = "Alexandria, Romania, Earth"
 

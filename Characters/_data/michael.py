@@ -28,4 +28,4 @@ BACKSTORY = ""
 
 HIGHLIGHTS = ""
 
-SUMMONS = ()
+SUMMONS = ("Bismark", "Helltrain", "Golem", "Astaroth", "Grimnir")

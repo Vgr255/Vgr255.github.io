@@ -32,4 +32,4 @@ BACKSTORY = ""
 
 HIGHLIGHTS = ""
 
-SUMMONS = ()
+SUMMONS = ("Titan", "Brothers", "Scarmiglione", "Ragnarok")

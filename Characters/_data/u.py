@@ -8,9 +8,9 @@ CLASS = "Assassin"
 
 WEAPON = ""
 
-BIRTH = ""
+BIRTH = "July 3rd, 1902"
 
-BIRTH_LOCATION = ""
+BIRTH_LOCATION = "Unknown"
 
 LETTER = "U"
 
@@ -24,4 +24,4 @@ BACKSTORY = ""
 
 HIGHLIGHTS = ""
 
-SUMMONS = ()
+SUMMONS = ("Bismark", "Golem", "Diablos", "Knights of the Round")

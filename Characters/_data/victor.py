@@ -28,4 +28,4 @@ BACKSTORY = ""
 
 HIGHLIGHTS = ""
 
-SUMMONS = ()
+SUMMONS = ("Dragon", "Tonberry", "Griever", "Zona")

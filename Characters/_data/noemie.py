@@ -8,13 +8,13 @@ CLASS = "Fighter"
 
 WEAPON = "Her fists"
 
-BIRTH = "" # to check with her
+BIRTH = "April 16th, 1990"
 
-BIRTH_LOCATION = ""
+BIRTH_LOCATION = "Québec, Québec, Canada, Earth"
 
 LETTER = "N"
 
-RECRUITMENT_ORDER = 10
+RECRUITMENT_ORDER = 15
 
 SUMMARY = ""
 
@@ -24,4 +24,4 @@ BACKSTORY = ""
 
 HIGHLIGHTS = ""
 
-SUMMONS = ()
+SUMMONS = ("Bismark", "Moogle", "Carbuncle")

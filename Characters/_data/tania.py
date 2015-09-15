@@ -24,4 +24,4 @@ BACKSTORY = ""
 
 HIGHLIGHTS = ""
 
-SUMMONS = ()
+SUMMONS = ("Tritoch", "Ramuh", "Kirin", "Phantom", "Baalberith")
