@@ -65,7 +65,6 @@ def get_sumansians():
     pairs = list(zip(new[::2], new[1::2]))
 
     final = []
-    num = 0
 
     for c1, c2 in pairs:
         m1 = CHARACTERS[c1][1]
@@ -151,7 +150,7 @@ def generate_characters():
                 value = CHAR_REF.format(CHARACTERS[value][0], value)
             f.write(LINE.format("Sumansian twin", "{0}{1}{2}".format("<i>" if isstr else "", value, "</i>" if isstr else "")))
 
-            if twin and twin not in getattr(module, "FAMILY", ()): # corner case of Jeremy/Amelia
+            if twin and twin not in (x[0] for x in getattr(module, "FAMILY", ())): # corner case of Jeremy/Amelia
                 module.FAMILY = ((value, "Sumansian twin"),) + getattr(module, "FAMILY", ())
 
             if getattr(module, "FAMILY", None):
