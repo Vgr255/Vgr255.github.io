@@ -9,8 +9,6 @@ import os
 BACKGROUND_COLOR = 0xDDDDDD
 TABSIZE = 2
 
-HEADER = "<!DOCTYPE html>\n<!-- AUTOMATICALLY GENERATED HTML CODE -->\n\n<meta charset=\"utf-8\" />\n\n<html>\n"
-
 LINK = "https://github.com/Vgr255/Vgr255.github.io"
 
 # Stop editing here
@@ -21,7 +19,10 @@ LINE = (TAB * 2) + "<h2><b>{0}:</b> {1}</h2>\n"
 FAMILY_SUMMONS_LINE = (TAB * 3) + "<li><i>{0}</i> ({1})</li>\n"
 CHARACTER_LINE = (TAB * 4) + "<li><b>{0}<a href=\"{1}.html\" title=\"{2}\">{2}</a></b></li>\n"
 
-PARAGRAPH = "{0}{0}{0}</ul>\n{0}{0}</p>\n\n{0}{0}<p>\n{0}{0}{0}<h2>{1}</h2>\n{0}{0}{0}<ul>\n"
+HEADER = ("<!DOCTYPE html>\n<!-- AUTOMATICALLY GENERATED HTML CODE -->\n\n<meta charset=\"utf-8\" />\n\n<html>\n"
+          "{0}<head>\n{0}{0}<title>{2}</title>\n{0}</head>\n\n{0}<body style=\"background-color:#{1:06x};\">\n").format(TAB, BACKGROUND_COLOR, "{0}")
+
+PARAGRAPH = "{0}{0}{0}</ul>\n{0}{0}</p>\n\n{0}{0}<p>\n{0}{0}{0}<h2>{1}</h2>\n{0}{0}{0}<ul>\n".format(TAB, "{0}")
 
 CHAR_REF = "<a href=\"{0}.html\" title=\"{1}\">{1}</a>"
 
@@ -62,7 +63,7 @@ def get_sumansians():
             elif sumansian == twin:
                 new.append(name)
 
-    pairs = list(zip(new[::2], new[1::2]))
+    pairs = zip(new[::2], new[1::2])
 
     final = []
 
@@ -133,9 +134,7 @@ def generate_characters():
         module = importlib.import_module("Characters._data." + file[:-3])
 
         with open(os.path.join(os.getcwd(), "Characters", "{0}.html".format(module.FILE)), "w", encoding="utf-8") as f:
-            f.write(HEADER)
-            f.write("{0}<head>\n{0}{0}<title>{1}</title>\n{0}</head>\n\n".format(TAB, module.NAME))
-            f.write("{0}<body style=\"background-color:#{1:06x};\">\n".format(TAB, BACKGROUND_COLOR))
+            f.write(HEADER.format(module.NAME))
             for item in ORDER:
                 value = getattr(module, item.replace("-", "_").replace(" ", "_").upper(), None)
                 isstr = isinstance(value, str) and not value.isdigit()
@@ -191,9 +190,7 @@ def generate_characters():
 
 def generate_character_index():
     with open(os.path.join(os.getcwd(), "Characters", "index.html"), "w", encoding="utf-8") as f:
-        f.write(HEADER)
-        f.write("{0}<head>\n{0}{0}<title>Characters Index</title>\n{0}</head>\n\n".format(TAB))
-        f.write("{0}<body style=\"background-color:#{1:06x};\">\n".format(TAB, BACKGROUND_COLOR))
+        f.write(HEADER.format("Characters Index"))
         f.write("{0}{0}<h1>Characters</h1>\n{0}{0}<p>\n{0}{0}{0}<h2>\"Them\"</h2>\n{0}{0}{0}<ul>\n".format(TAB))
 
         them = [x for x in CHARACTERS if getattr(CHARACTERS[x][1], "LETTER", None)]
@@ -202,7 +199,7 @@ def generate_character_index():
         for c in them:
             f.write(CHARACTER_LINE.format("{0}: ".format(CHARACTERS[c][1].LETTER), CHARACTERS[c][0], c))
 
-        f.write(PARAGRAPH.format(TAB, "S-Team"))
+        f.write(PARAGRAPH.format("S-Team"))
 
         s_team = [x for x in CHARACTERS if getattr(CHARACTERS[x][1], "S_TEAM_RANK", None) is not None]
         s_team.sort(key=lambda x: CHARACTERS[x][1].S_TEAM_RANK)
@@ -211,7 +208,7 @@ def generate_character_index():
         for c in s_team:
             f.write(CHARACTER_LINE.format("{0}: ".format(CHARACTERS[c][1].S_TEAM_RANK), CHARACTERS[c][0], c))
 
-        f.write(PARAGRAPH.format(TAB, "The Great Four"))
+        f.write(PARAGRAPH.format("The Great Four"))
 
         great_four = [x for x in CHARACTERS if getattr(CHARACTERS[x][1], "GREAT_FOUR", None)]
         great_four.sort(key=lambda x: CHARACTERS[x][2])
@@ -219,7 +216,7 @@ def generate_character_index():
         for c in great_four:
             f.write(CHARACTER_LINE.format("", CHARACTERS[c][0], c))
 
-        f.write(PARAGRAPH.format(TAB, "Sumansians"))
+        f.write(PARAGRAPH.format("Sumansians"))
 
         sumansians = get_sumansians()
 
@@ -230,7 +227,7 @@ def generate_character_index():
         other.sort(key=lambda x: CHARACTERS[x][2])
 
         if other:
-            f.write(PARAGRAPH.format(TAB, "Other"))
+            f.write(PARAGRAPH.format("Other"))
 
             for c in other:
                 f.write(CHARACTER_LINE.format("", CHARACTERS[c][0], c))
@@ -243,9 +240,7 @@ def generate_character_index():
 
 def generate_index():
     with open(os.path.join(os.getcwd(), "index.html"), "w", encoding="utf-8") as f:
-        f.write(HEADER)
-        f.write("{0}<head>\n{0}{0}<title>Vgr's Personal Website</title>\n{0}</head>\n\n".format(TAB))
-        f.write("{0}<body style=\"background-color:#{1:06x};\">\n".format(TAB, BACKGROUND_COLOR))
+        f.write(HEADER.format("Vgr's Personal Website"))
 
         folders = [os.getcwd()]
         data = []
