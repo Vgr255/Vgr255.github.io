@@ -50,7 +50,7 @@ def get_sumansians():
     new = []
     rest = set()
     for sumansian in (x for x in CHARACTERS if getattr(CHARACTERS[x][1], "SUMANSIAN", None)):
-        if sumansian in new or sumansian in rest:
+        if sumansian in new or sumansian in rest or not getattr(CHARACTERS[sumansian][1], "SUMANSIAN_TWIN", None):
             continue
         new.append(sumansian)
         for name, twin in SUMANSIANS:
