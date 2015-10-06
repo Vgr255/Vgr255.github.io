@@ -18,7 +18,7 @@ SUMMARY = "Evelyn is a very gifted magician, being able to control almost all ex
 
 ABILITIES = "By being able to control most basic spells as well as advanced ones, Evelyn makes up for a very talented mage. She can cast Ultima, being able to wipe out an entire city. She can also summon one of the Bahamut entities all by herself."
 
-BACKSTORY = "Due to her age, little is known about her past, besides where she originated from. It's not even sure whether 'Evelyn' was her original name. Much like most of them, her memory does not always serve her right, and dying on the battlefield makes her forget a lot of things, too."
+BACKSTORY = "Due to her age, little is known about her past, besides where she originated from. It's not even sure whether 'Evelyn' was her original name. Much like most of <i>them</i>, her memory does not always serve her right, and dying on the battlefield makes her forget a lot of things, too. She was taken from her parents by Victor Morika when they found out about the massive attacks the two have been leading by using her powers."
 
 HIGHLIGHTS = "During The Void Invasion, she used her most powerful spells, wiping out most of the Void, to protect her friends and family. The tremendous amount of power that was unleashed on that day forced the closing of the portal and killed most of the invaders, eventually saving them from being extinct."
 
