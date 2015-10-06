@@ -17,6 +17,7 @@ TAB = " " * TABSIZE
 
 LINE = (TAB * 2) + "<h2><b>{0}:</b> {1}</h2>\n"
 FAMILY_SUMMONS_LINE = (TAB * 3) + "<li><i>{0}</i> ({1})</li>\n"
+STORY_LINE = (TAB * 3) + "<li><b><a href=\"{0}.html\" title=\"{1}\">{1}</a></b></li>\n"
 CHARACTER_LINE = (TAB * 4) + "<li><b>{0}<a href=\"{1}.html\" title=\"{2}\">{2}</a></b></li>\n"
 
 HEADER = ("<!DOCTYPE html>\n<!-- AUTOMATICALLY GENERATED HTML CODE -->\n\n<meta charset=\"utf-8\" />\n\n<html>\n"
@@ -32,6 +33,7 @@ ORDER = ("Name", "Element", "Class", "Weapon", "Birth", "Birth location",
 TEXTS = ("Summary", "Abilities", "Backstory", "Highlights")
 
 CHARACTERS = {}
+STORY = collections.OrderedDict() # keep alphabetical order
 
 SUMANSIANS = set()
 
@@ -238,6 +240,41 @@ def generate_character_index():
         f.write(CHAR_REF.format(LINK, "Source Code on GitHub"))
         f.write("</p>\n\n{0}</body>\n</html>\n".format(TAB))
 
+def parse_story():
+    for file in os.listdir(os.path.join(os.getcwd(), "Story", "_data")):
+        if not file.endswith(".py") or file.startswith("__init__"):
+            continue
+
+        file = file[:-3]
+        module = importlib.import_module("Story._data." + file)
+
+        STORY[file] = module.TITLE, module.DATA
+
+def generate_story():
+    for part in STORY:
+        with open(os.path.join(os.getcwd(), "Story", "{0}.html".format(part.capitalize())), "w", encoding="utf-8") as f:
+            f.write(HEADER.format(STORY[part][0]))
+            f.write("{0}{0}<h1>{1}</h1>\n".format(TAB, STORY[part][0]))
+            for line in STORY[part][1].splitlines():
+                if not line:
+                    continue
+                f.write("\n{0}{0}<p>{1}</p>\n".format(TAB, line))
+            f.write("\n{0}{0}<p><b>{1}</b></p>\n".format(TAB, CHAR_REF.format("index", "Back to Story Index")))
+            f.write("{0}{0}<p><b>{1}</b></p>\n".format(TAB, CHAR_REF.format("../index", "Back to Index")))
+
+def generate_story_index():
+    with open(os.path.join(os.getcwd(), "Story", "index.html"), "w", encoding="utf-8") as f:
+        f.write(HEADER.format("Story index"))
+        f.write("{0}{0}<h1>Story Index</h1>\n".format(TAB))
+        f.write("{0}{0}<ul>\n".format(TAB))
+        for part in STORY:
+            f.write(STORY_LINE.format(part.capitalize(), STORY[part][0]))
+        f.write("{0}{0}</ul>\n\n{0}<p>".format(TAB))
+        f.write(CHAR_REF.format("../index", "Back to Index"))
+        f.write("</p>\n{0}<p>".format(TAB))
+        f.write(CHAR_REF.format(LINK, "Source Code on GitHub"))
+        f.write("</p>\n\n{0}</body>\n</html>\n".format(TAB))
+
 def generate_index():
     with open(os.path.join(os.getcwd(), "index.html"), "w", encoding="utf-8") as f:
         f.write(HEADER.format("Vgr's Personal Website"))
@@ -262,4 +299,9 @@ if __name__ == "__main__":
     parse_characters()
     generate_characters()
     generate_character_index()
+
+    parse_story()
+    generate_story()
+    generate_story_index()
+
     generate_index()
