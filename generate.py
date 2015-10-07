@@ -300,6 +300,7 @@ def generate_story_index():
 def generate_index():
     with open(os.path.join(os.getcwd(), "index.html"), "w", encoding="utf-8") as f:
         f.write(HEADER.format("Vgr's Personal Website"))
+        f.write("{0}{0}<h1>Vgr's Personal Website</h1>\n".format(TAB))
 
         folders = [os.getcwd()]
         data = []
@@ -313,7 +314,7 @@ def generate_index():
                     data.append(os.path.join(folder, file))
 
         for folder in data:
-            f.write("{0}{0}<h1>{1}</h1>\n".format(TAB, CHAR_REF.format("/".join((folder[len(os.getcwd())+1:].replace(os.sep, "/"), "index")), os.path.split(folder)[1] + " Index")))
+            f.write("{0}{0}<h2>{1}</h2>\n".format(TAB, CHAR_REF.format("/".join((folder[len(os.getcwd())+1:].replace(os.sep, "/"), "index")), os.path.split(folder)[1] + " Index")))
 
         f.write("\n{0}{0}<p><a href=\"{1}\" title=\"{2}\">{2}</a></p>\n{0}</body>\n</html>\n".format(TAB, LINK, "Source Code on GitHub"))
 
