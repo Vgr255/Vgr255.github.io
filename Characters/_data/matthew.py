@@ -30,4 +30,6 @@ BACKSTORY = ""
 
 HIGHLIGHTS = ""
 
+FAMILY = (("Phillip", "Boyfriend"),)
+
 SUMMONS = ("Titan", "Brothers", "Scarmiglione", "Ragnarok")
