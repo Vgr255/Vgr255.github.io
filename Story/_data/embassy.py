@@ -2,6 +2,8 @@
 
 TITLE = "Passage at the Embassy (Evelyn's origins)"
 
+CHARACTERS = ("Evelyn", "Victor Morika", "Luke Walker")
+
 DATA = """
 
 Set: Near an unknown embassy, in the parking lot. Victor Morika is fighting with two people, a couple of a man and a woman. \

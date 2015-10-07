@@ -33,7 +33,9 @@ ORDER = ("Name", "Element", "Class", "Weapon", "Birth", "Birth location",
 TEXTS = ("Summary", "Abilities", "Backstory", "Highlights")
 
 CHARACTERS = {}
+
 STORY = collections.OrderedDict() # keep alphabetical order
+STORIES = collections.defaultdict(set)
 
 SUMANSIANS = set()
 
@@ -187,6 +189,14 @@ def generate_characters():
                 else:
                     f.write("\n{0}{0}<h2><b>{1}:</b> None</h2>\n".format(TAB, item))
 
+            if module.NAME in STORIES:
+                f.write("\n{0}{0}<h2><b>Story:</b></h2>\n{0}{0}<ul>\n".format(TAB))
+                for story in STORIES[module.NAME]:
+                    f.write("{0}{0}{0}<li>{1}</li>\n".format(TAB, CHAR_REF.format("../Story/{0}".format(story.capitalize()), STORY[story][0])))
+                f.write("{0}{0}</ul>\n".format(TAB))
+            else:
+                f.write("\n{0}{0}<h2><b>Story:</b> None</h2>\n".format(TAB))
+
             f.write("\n{0}{0}<p><b>{1}</b></p>\n".format(TAB, CHAR_REF.format("index", "Back to Character Index")))
             f.write("{0}{0}<p><b>{1}</b></p>\n\n{0}</body>\n</html>\n".format(TAB, CHAR_REF.format("../index", "Back to Index")))
 
@@ -248,7 +258,10 @@ def parse_story():
         file = file[:-3]
         module = importlib.import_module("Story._data." + file)
 
-        STORY[file] = module.TITLE, module.DATA
+        STORY[file] = module.TITLE, module.DATA, getattr(module, "CHARACTERS", ())
+
+        for char in getattr(module, "CHARACTERS", ()):
+            STORIES[char].add(file)
 
 def generate_story():
     for part in STORY:
@@ -259,6 +272,15 @@ def generate_story():
                 if not line:
                     continue
                 f.write("\n{0}{0}<p>{1}</p>\n".format(TAB, line))
+
+            if STORY[part][2]:
+                f.write("\n{0}{0}<h2><b>Characters:</b></h2>\n{0}{0}<ul>\n".format(TAB))
+                for char in STORY[part][2]:
+                    f.write(STORY_LINE.format("../Characters/{0}".format(CHARACTERS[char][0]), char))
+                f.write("{0}{0}</ul>\n".format(TAB))
+            else:
+                f.write("\n{0}{0}<h2><b>Characters:</b> None</h2>\n".format(TAB))
+
             f.write("\n{0}{0}<p><b>{1}</b></p>\n".format(TAB, CHAR_REF.format("index", "Back to Story Index")))
             f.write("{0}{0}<p><b>{1}</b></p>\n".format(TAB, CHAR_REF.format("../index", "Back to Index")))
 
@@ -297,10 +319,11 @@ def generate_index():
 
 if __name__ == "__main__":
     parse_characters()
+    parse_story()
+
     generate_characters()
     generate_character_index()
 
-    parse_story()
     generate_story()
     generate_story_index()
 
