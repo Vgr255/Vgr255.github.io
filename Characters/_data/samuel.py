@@ -10,6 +10,8 @@ BIRTH = ""
 
 BIRTH_LOCATION = ""
 
+OTHER_SQUAD = True
+
 SUMMARY = ""
 
 ABILITIES = ""

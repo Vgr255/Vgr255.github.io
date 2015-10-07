@@ -14,6 +14,8 @@ SUMANSIAN = True
 
 SUMANSIAN_TWIN = "Ashlyn Cormier"
 
+OTHER_SQUAD = True
+
 SUMMARY = ""
 
 ABILITIES = ""

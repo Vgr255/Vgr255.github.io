@@ -14,6 +14,8 @@ SUMANSIAN = True
 
 SUMANSIAN_TWIN = "Fanny"
 
+OTHER_SQUAD = True
+
 SUMMARY = ""
 
 ABILITIES = ""
