@@ -16,7 +16,7 @@ RECRUITMENT_ORDER = 2
 
 SUMANSIAN = True
 
-SUMANSIAN_TWIN = "???"
+SUMANSIAN_TWIN = "Akio"
 
 SUMMARY = "Fanny is a cheerful ever-young girl, who can impose her will on any living creature, provided their intelligence is low enough to allow it. Her physical strength isn't great, and neither is her magical power. Whenever there are creatures involved, she will rush in and control them. She is always laughing and smiling, knowing that she might forget everything that she experienced."
 
