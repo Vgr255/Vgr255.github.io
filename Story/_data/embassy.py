@@ -2,7 +2,7 @@
 
 TITLE = "Passage at the Embassy (Evelyn's origins)"
 
-CHARACTERS = ("Evelyn", "Brandon", "Victor Morika", "Luke Walker")
+CHARACTERS = ("Evelyn", "Brandon", "Victor Morika", "Luke Walker", "Zoe")
 
 DATA = """
 
