@@ -26,4 +26,6 @@ BACKSTORY = ""
 
 HIGHLIGHTS = ""
 
+FAMILY = (("Ashlyn Cormier", "Daughter"), ("Eric Cormier", "Son"))
+
 SUMMONS = ("Bismark", "Helltrain", "Golem", "Astaroth", "Grimnir")

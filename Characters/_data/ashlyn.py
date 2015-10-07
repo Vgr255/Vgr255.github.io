@@ -14,6 +14,10 @@ LETTER = "H"
 
 RECRUITMENT_ORDER = 20
 
+SUMANSIAN = True
+
+SUMANSIAN_TWIN = "Eric Cormier"
+
 SUMMARY = "Ashlyn is a very talented summoner, who can summon any magical creature, no matter where she is or what the creatures are. She has control over a summon of each element, plus many of the most powerful ones."
 
 ABILITIES = "While she cannot fight directly due to a lack of weapon and strength, she is very useful in battle as she can provide strong cover through summoning, and can also aid in escaping."
