@@ -21,9 +21,9 @@ STORY_LINE = (TAB * 3) + "<li><b><a href=\"{0}.html\" title=\"{1}\">{1}</a></b><
 CHARACTER_LINE = (TAB * 4) + "<li><b>{0}<a href=\"{1}.html\" title=\"{2}\">{2}</a></b></li>\n"
 
 HEADER = ("<!DOCTYPE html>\n<!-- AUTOMATICALLY GENERATED HTML CODE -->\n\n<meta charset=\"utf-8\" />\n\n<html>\n"
-          "{0}<head>\n{0}{0}<title>{2}</title>\n{0}</head>\n\n{0}<body style=\"background-color:#{1:06x};\">\n").format(TAB, BACKGROUND_COLOR, "{0}")
+          "{0}<head>\n{0}{0}<title>{{0}}</title>\n{0}</head>\n\n{0}<body style=\"background-color:#{1:06x};\">\n").format(TAB, BACKGROUND_COLOR)
 
-PARAGRAPH = "{0}{0}{0}</ul>\n{0}{0}</p>\n\n{0}{0}<p>\n{0}{0}{0}<h2>{1}</h2>\n{0}{0}{0}<ul>\n".format(TAB, "{0}")
+PARAGRAPH = "{0}{0}{0}</ul>\n{0}{0}</p>\n\n{0}{0}<p>\n{0}{0}{0}<h2>{{0}}</h2>\n{0}{0}{0}<ul>\n".format(TAB)
 
 CHAR_REF = "<a href=\"{0}.html\" title=\"{1}\">{1}</a>"
 
