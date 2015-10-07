@@ -257,7 +257,7 @@ def generate_character_index():
 
         f.write("{0}{0}{0}</ul>\n{0}{0}</p>\n\n{0}{0}<p>".format(TAB))
         f.write(CHAR_REF.format("../index", "Back to Index"))
-        f.write("<p>\n{0}{0}<p><a href=\"{1}\" title=\"{2}\">{2}</a></p>\n\n{0}</body>\n</html>\n".format(TAB, LINK, "Source Code on GitHub"))
+        f.write("</p>\n{0}{0}<p><a href=\"{1}\" title=\"{2}\">{2}</a></p>\n\n{0}</body>\n</html>\n".format(TAB, LINK, "Source Code on GitHub"))
 
 def parse_story():
     for file in os.listdir(os.path.join(os.getcwd(), "Story", "_data")):
@@ -302,7 +302,7 @@ def generate_story_index():
             f.write(STORY_LINE.format(part.capitalize(), STORY[part][0]))
         f.write("{0}{0}</ul>\n\n{0}{0}<p>".format(TAB))
         f.write(CHAR_REF.format("../index", "Back to Index"))
-        f.write("<p>\n{0}{0}<p><a href=\"{1}\" title=\"{2}\">{2}</a></p>\n\n{0}</body>\n</html>\n".format(TAB, LINK, "Source Code on GitHub"))
+        f.write("</p>\n{0}{0}<p><a href=\"{1}\" title=\"{2}\">{2}</a></p>\n\n{0}</body>\n</html>\n".format(TAB, LINK, "Source Code on GitHub"))
 
 def generate_index():
     with open(os.path.join(os.getcwd(), "index.html"), "w", encoding="utf-8") as f:
