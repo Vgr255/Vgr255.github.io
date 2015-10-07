@@ -153,8 +153,8 @@ def generate_characters():
                 value = CHAR_REF.format(CHARACTERS[value][0], value)
             f.write(LINE.format("Sumansian twin", "{0}{1}{2}".format("<i>" if isstr else "", value, "</i>" if isstr else "")))
 
-            value = getattr(module, "OTHER_SQUAD", None)
-            f.write(LINE.format("Other Squad", "Yes" if value else "No"))
+            squad = getattr(module, "OTHER_SQUAD", None)
+            f.write(LINE.format("Other Squad", "Yes" if squad else "No"))
 
             if twin and twin not in (x[0] for x in getattr(module, "FAMILY", ())): # corner case of Jeremy/Amelia
                 module.FAMILY = ((value, "Sumansian twin"),) + getattr(module, "FAMILY", ())
