@@ -148,10 +148,13 @@ def generate_characters():
             f.write(LINE.format("Sumansian", ("Yes" if getattr(module, "SUMANSIAN", False) else "No") + great_four))
 
             value = twin = getattr(module, "SUMANSIAN_TWIN", None)
-            isstr = isinstance(value, str) and value != "Unknown"
+            isstr = isinstance(value, str)
             if value in CHARACTERS:
                 value = CHAR_REF.format(CHARACTERS[value][0], value)
             f.write(LINE.format("Sumansian twin", "{0}{1}{2}".format("<i>" if isstr else "", value, "</i>" if isstr else "")))
+
+            value = getattr(module, "OTHER_SQUAD", None)
+            f.write(LINE.format("Other Squad", "Yes" if value else "No"))
 
             if twin and twin not in (x[0] for x in getattr(module, "FAMILY", ())): # corner case of Jeremy/Amelia
                 module.FAMILY = ((value, "Sumansian twin"),) + getattr(module, "FAMILY", ())
@@ -235,7 +238,15 @@ def generate_character_index():
         for c in sumansians:
             f.write(CHARACTER_LINE.format("", CHARACTERS[c][0], c))
 
-        other = [x for x in CHARACTERS if x not in them + s_team + great_four + sumansians]
+        f.write(PARAGRAPH.format("The Other Squad"))
+
+        other_squad = [x for x in CHARACTERS if getattr(CHARACTERS[x][1], "OTHER_SQUAD", None)]
+        other_squad.sort(key=lambda x: CHARACTERS[x][2])
+
+        for c in other_squad:
+            f.write(CHARACTER_LINE.format("", CHARACTERS[c][0], c))
+
+        other = [x for x in CHARACTERS if x not in them + s_team + great_four + sumansians + other_squad]
         other.sort(key=lambda x: CHARACTERS[x][2])
 
         if other:
