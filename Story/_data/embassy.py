@@ -1,4 +1,7 @@
 # That one came in a dream on October 6th, 2015. Adapted for the narrative and made into Evelyn's past
+# Original story didn't involve Evelyn at all (it was only a little nameless girl), and Jeremy Alexander
+# was the one fighting instead of Victor Morika. Nobody else was present, and Jeremy jumped through a window
+# from the first floor. Dreams are weird but fun
 
 TITLE = "Passage at the Embassy (Evelyn's origins)"
 
@@ -14,13 +17,13 @@ watching aside for the whole time, grabs her arm, and proceeds to run towards th
 
 The girl has her hair down her back tied in a uniform braid. She is young, and does not resist when Victor brings her towards the embassy.
 
-"Don't let them in!", he shouts at the guards just outside the embassy. Having stepped in the protection field, he can no longer make use \
-of his magical abilities and has to rely on technology to defend himself.
+"Don't let them in!", he shouts at the guards just outside the embassy. As he moves onwards, the girl suddenly feels \
+heavy and tired.
 
 He shouts warnings in the main hall where people are talking, and makes quick way to the staircase. \
 Knowing that his time is short, he quickly runs up the stairs, closely followed by the girl.
 
-At the top awaits Brandon, with a something that looks like an odd mix between a backpack and a harness. \
+At the top awaits Brandon, with something that looks like an odd mix between a backpack and a harness. \
 He gives it to Victor, who quickly puts it on his back. He pulls the girl forward, pressing her against his chest, \
 and binds her with some straps. She's weak at this point, and seems to be about to pass out.
 
@@ -42,7 +45,7 @@ down on the ground, but when she entered the embassy's vicinity, she started to 
 
 "You didn't realize it, right?", the first man said, "You survive thanks to magic."
 
-"But... why did... I felt dead when entering that place?"
+"But... why did... I feel dead when entering that place?"
 
 "It's because that embassy has a special protection field, and blocks all magic. It also permanently \
 blocked your parents' abilities as long as you don't grant them power again. They were neutralized and \
