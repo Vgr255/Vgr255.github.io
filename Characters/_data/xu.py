@@ -4,9 +4,9 @@ NAME = "Xu"
 
 NATIONALITY = "Chinese"
 
-CLASS = None
+CLASS = "Tactician"
 
-WEAPON = ""
+WEAPON = "Magic Pistols"
 
 BIRTH = "May 26th, 1996"
 
