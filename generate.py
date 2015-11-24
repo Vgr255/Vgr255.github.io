@@ -27,7 +27,7 @@ PARAGRAPH = "{0}{0}{0}</ul>\n{0}{0}</p>\n\n{0}{0}<p>\n{0}{0}{0}<h2>{{0}}</h2>\n{
 
 CHAR_REF = "<a href=\"{0}.html\" title=\"{1}\">{1}</a>"
 
-ORDER = ("Name", "Element", "Class", "Weapon", "Birth", "Birth location",
+ORDER = ("Name", "Nationality", "Element", "Class", "Weapon", "Birth", "Birth location",
          "Death", "Death location", "Letter", "Recruitment order", "S-Team Rank")
 
 TEXTS = ("Summary", "Abilities", "Backstory", "Highlights")
