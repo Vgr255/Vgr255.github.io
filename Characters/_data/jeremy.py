@@ -2,6 +2,8 @@ FILE = "Jeremy"
 
 NAME = "Jeremy Alexander"
 
+NATIONALITY = "American"
+
 ELEMENT = "Fire"
 
 CLASS = "Morpher"

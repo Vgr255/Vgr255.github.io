@@ -2,6 +2,8 @@ FILE = "Yano"
 
 NAME = "Yanò"
 
+NATIONALITY = "Korean"
+
 CLASS = None
 
 WEAPON = ""

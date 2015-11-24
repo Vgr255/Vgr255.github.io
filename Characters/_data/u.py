@@ -2,6 +2,8 @@ FILE = "U"
 
 NAME = "U"
 
+NATIONALITY = "Indian"
+
 CLASS = "Assassin"
 
 WEAPON = ""

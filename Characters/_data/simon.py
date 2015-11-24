@@ -2,6 +2,8 @@ FILE = "Simon"
 
 NAME = "Simon Rookwell"
 
+NATIONALITY = "Ukranian"
+
 ELEMENT = "Water"
 
 CLASS = "Shapeshifter"

@@ -2,6 +2,8 @@ FILE = "Matthew"
 
 NAME = "Matthew Jotkins"
 
+NATIONALITY = "Mexican"
+
 ELEMENT = "Earth"
 
 CLASS = "Swordsman"

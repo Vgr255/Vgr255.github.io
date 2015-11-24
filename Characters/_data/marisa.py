@@ -2,6 +2,8 @@ FILE = "Marisa"
 
 NAME = "Marisa Merkel"
 
+NATIONALITY = "German"
+
 ELEMENT = "Healing"
 
 CLASS = "Healer"

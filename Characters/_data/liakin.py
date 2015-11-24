@@ -2,6 +2,8 @@ FILE = "Liakin"
 
 NAME = "Anabella Liakin"
 
+NATIONALITY = "Canadian"
+
 ELEMENT = "Ice"
 
 CLASS = "Teleporter"

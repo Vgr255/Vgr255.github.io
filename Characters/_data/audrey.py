@@ -2,6 +2,8 @@ FILE = "Audrey"
 
 NAME = "Audrey"
 
+NATIONALITY = "American"
+
 CLASS = "Dragoon"
 
 WEAPON = "Gungnir"

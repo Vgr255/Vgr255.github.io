@@ -2,6 +2,8 @@ FILE = "Rachel"
 
 NAME = "Rachel"
 
+NATIONALITY = "Danish"
+
 CLASS = "Erudite"
 
 WEAPON = "Focused energy projectiles"

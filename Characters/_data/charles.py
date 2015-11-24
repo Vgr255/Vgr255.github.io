@@ -2,6 +2,8 @@ FILE = "Charles"
 
 NAME = "Charles"
 
+NATIONALITY = "French"
+
 CLASS = "Berserker"
 
 WEAPON = "Joint Dagger"

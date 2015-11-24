@@ -2,6 +2,8 @@ FILE = "Katelyn"
 
 NAME = "Katelyn Jackson"
 
+NATIONALITY = "Finnish"
+
 ELEMENT = "Wind"
 
 CLASS = "Weaponsmitch"

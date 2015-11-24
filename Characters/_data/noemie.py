@@ -2,6 +2,8 @@ FILE = "Noemie"
 
 NAME = "Noémie"
 
+NATIONALITY = "Canadian"
+
 CLASS = "Fighter"
 
 WEAPON = "Her fists"

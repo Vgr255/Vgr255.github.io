@@ -2,6 +2,8 @@ FILE = "Xu"
 
 NAME = "Xu"
 
+NATIONALITY = "Chinese"
+
 CLASS = None
 
 WEAPON = ""

@@ -2,6 +2,8 @@ FILE = "Fanny"
 
 NAME = "Fanny"
 
+NATIONALITY = "</i>None (Void)<i>"
+
 CLASS = "Beastmaster"
 
 WEAPON = "Animals"

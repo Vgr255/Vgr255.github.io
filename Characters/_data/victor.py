@@ -2,6 +2,8 @@ FILE = "Victor"
 
 NAME = "Victor Morika"
 
+NATIONALITY = "German"
+
 CLASS = "Illusionist"
 
 WEAPON = ""

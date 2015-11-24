@@ -2,6 +2,8 @@ FILE = "Diana"
 
 NAME = "Diana"
 
+NATIONALITY = "Russian"
+
 CLASS = "Bender"
 
 WEAPON = "Bent matter"

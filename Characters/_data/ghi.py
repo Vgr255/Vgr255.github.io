@@ -2,6 +2,8 @@ FILE = "Ghi"
 
 NAME = "Ghi Martin"
 
+NATIONALITY = "Australian"
+
 ELEMENT = "Poison"
 
 CLASS = "Nemesis"

@@ -2,6 +2,8 @@ FILE = "Gerald"
 
 NAME = "Gerald Kennedy"
 
+NATIONALITY = "American"
+
 ELEMENT = "Gravity"
 
 CLASS = "Sharpshooter"

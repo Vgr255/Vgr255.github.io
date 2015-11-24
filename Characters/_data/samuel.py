@@ -2,6 +2,8 @@ FILE = "Samuel"
 
 NAME = "Samuel"
 
+NATIONALITY = "American"
+
 CLASS = "Agent"
 
 WEAPON = ""

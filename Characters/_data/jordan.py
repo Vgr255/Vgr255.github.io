@@ -2,6 +2,8 @@ FILE = "Jordan"
 
 NAME = "Jordan"
 
+NATIONALITY = "Canadian"
+
 CLASS = "Transcender"
 
 WEAPON = "Magical pendant"

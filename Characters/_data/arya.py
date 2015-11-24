@@ -2,6 +2,8 @@ FILE = "Arya"
 
 NAME = "Arya Alexander"
 
+NATIONALITY = "British-American"
+
 ELEMENT = "Holy"
 
 CLASS = "Magic Fighter"

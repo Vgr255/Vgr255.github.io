@@ -2,6 +2,8 @@ FILE = "Eric"
 
 NAME = "Eric Cormier"
 
+NATIONALITY = "American"
+
 CLASS = ""
 
 WEAPON = ""

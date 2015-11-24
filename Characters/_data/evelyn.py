@@ -2,6 +2,8 @@ FILE = "Evelyn"
 
 NAME = "Evelyn"
 
+NATIONALITY = "Greek"
+
 CLASS = "Mage"
 
 WEAPON = "Magics of all sorts"

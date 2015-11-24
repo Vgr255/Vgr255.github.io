@@ -2,6 +2,8 @@ FILE = "Phaleen"
 
 NAME = "Phaleën"
 
+NATIONALITY = "Canadian"
+
 CLASS = "Fuser"
 
 WEAPON = "Fused matter"

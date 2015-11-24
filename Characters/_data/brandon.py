@@ -2,6 +2,8 @@ FILE = "Brandon"
 
 NAME = "Brandon"
 
+NATIONALITY = "American"
+
 CLASS = "Oracle"
 
 WEAPON = "Staff"

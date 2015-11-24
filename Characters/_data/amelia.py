@@ -2,6 +2,8 @@ FILE = "Amelia"
 
 NAME = "Amelia Bater"
 
+NATIONALITY = "British"
+
 ELEMENT = "Thunder"
 
 CLASS = "Runner"

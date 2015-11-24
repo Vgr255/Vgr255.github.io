@@ -2,6 +2,8 @@ FILE = "Marlene"
 
 NAME = "Marlene"
 
+NATIONALITY = "Sumansian"
+
 CLASS = "Exploder"
 
 WEAPON = ""

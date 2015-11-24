@@ -2,6 +2,8 @@ FILE = "Zoe"
 
 NAME = "Zoe"
 
+NATIONALITY = "Sumansian"
+
 CLASS = "Master"
 
 WEAPON = ""

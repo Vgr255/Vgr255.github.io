@@ -2,6 +2,8 @@ FILE = "Akio"
 
 NAME = "Akio"
 
+NATIONALITY = "</i>None (Void)<i>"
+
 CLASS = "Metamorph"
 
 WEAPON = None

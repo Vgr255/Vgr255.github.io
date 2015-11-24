@@ -2,6 +2,8 @@ FILE = "Michael"
 
 NAME = "Michael Cormier"
 
+NATIONALITY = "Sumansian"
+
 CLASS = "Mystic Fighter"
 
 WEAPON = ""

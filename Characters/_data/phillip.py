@@ -2,6 +2,8 @@ FILE = "Phillip"
 
 NAME = "Phillip"
 
+NATIONALITY = "American"
+
 CLASS = "Shooter"
 
 WEAPON = "Submachine Gun"

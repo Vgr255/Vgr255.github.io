@@ -2,6 +2,8 @@ FILE = "Luke"
 
 NAME = "Luke Walker"
 
+NATIONALITY = "American"
+
 CLASS = "Manipulator"
 
 WEAPON = ""

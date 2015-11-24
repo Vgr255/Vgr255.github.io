@@ -2,6 +2,8 @@ FILE = "Ashlyn"
 
 NAME = "Ashlyn Cormier"
 
+NATIONALITY = "American"
+
 CLASS = "Summoner"
 
 WEAPON = "Magical Creatures"

@@ -2,6 +2,8 @@ FILE = "Isa"
 
 NAME = "Isa"
 
+NATIONALITY = "Sumansian"
+
 CLASS = "Darwiner"
 
 WEAPON = "Energy bursts"

@@ -2,6 +2,8 @@ FILE = "Tania"
 
 NAME = "Tania"
 
+NATIONALITY = "Nigerian"
+
 CLASS = "Binder"
 
 WEAPON = "Energy stripes"

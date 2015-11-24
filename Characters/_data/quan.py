@@ -2,6 +2,8 @@ FILE = "Quan"
 
 NAME = "Quan"
 
+NATIONALITY = "Portugese"
+
 CLASS = "Mime"
 
 WEAPON = "Knowledge"
