@@ -35,7 +35,7 @@ TEXTS = ("Summary", "Abilities", "Backstory", "Highlights")
 CHARACTERS = {}
 
 STORY = collections.OrderedDict() # keep alphabetical order
-STORIES = collections.defaultdict(set)
+STORIES = collections.defaultdict(list)
 
 SUMANSIANS = set()
 
@@ -270,7 +270,7 @@ def parse_story():
         STORY[file] = module.TITLE, module.DATA, getattr(module, "CHARACTERS", ())
 
         for char in getattr(module, "CHARACTERS", ()):
-            STORIES[char].add(file)
+            STORIES[char].append(file)
 
 def generate_story():
     for part in STORY:
