@@ -17,7 +17,7 @@ After a few minutes, a man sits in front of Phaleën and hands him a USB key. He
 from the case, and plugs in the key. He looks and skims through the files. After a few minutes, he pulls \
 out the key, puts it in his pocket and sets the laptop back in its case.
 
-"It's clear. These are the files we needed," he says. Moments later, a young chinese girl comes around the \
+"It's clean. These are the files we needed," he says. Moments later, a young chinese girl comes around the \
 corner carrying a suitcase. She comes to their table, bows to Phaleën, and puts the suitcase on the table. \
 Phaleën turns a few knobs, and the suitcase pops open.
 
@@ -36,7 +36,7 @@ The chinese attendee runs up to him, "Lane, aren't you going to go off after him
 set of keys from his pocket, and unlocks the car close to them. "We got what we needed, it doesn't matter at \
 this point," he replies. "But," she begins, promptly interrupted by him, "Listen, Xu, sometimes you need to \
 stop trying to make justice. We got what we needed, the rest doesn't matter. Let's just move on, Luke's \
-waiting on us.
+waiting on us."
 
 She sighs, and gets in the car along him. She'd have loved to just kill that man and get back what was in \
 the suitcase - what was it anyway? It wasn't money, but what could it be? She tried to forget about it, and \
