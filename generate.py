@@ -326,13 +326,12 @@ def generate_index():
         f.write("\n{0}{0}<p><a href=\"{1}\" title=\"{2}\">{2}</a></p>\n{0}</body>\n</html>\n".format(TAB, LINK, "Source Code on GitHub"))
 
 if __name__ == "__main__":
-    parse_characters()
-    parse_story()
+    name = func = None # prevent dict resizing
+    items = []
+    for name, func in globals().items():
+        if name.startswith("parse"):
+            func() # parse everything
+        elif name.startswith("generate"):
+            items.append(func)
 
-    generate_characters()
-    generate_character_index()
-
-    generate_story()
-    generate_story_index()
-
-    generate_index()
+    map(lambda f: f(), items)
