@@ -369,9 +369,10 @@ def generate_index():
             folder = folders.pop(0)
 
             for file in os.listdir(folder):
-                if os.path.isdir(os.path.join(folder, file)) and not file.startswith((".", "_")):
-                    folders.append(os.path.join(folder, file))
-                    data.append(os.path.join(folder, file))
+                filepath = os.path.join(folder, file)
+                if os.path.isdir(filepath) and not file.startswith((".", "_")):
+                    folders.append(filepath)
+                    data.append(filepath)
 
         for folder in data:
             f.write("{0}{0}<h2>{1}</h2>\n".format(TAB, CHAR_REF.format("/".join((folder[len(os.getcwd())+1:].replace(os.sep, "/"), "index")), os.path.split(folder)[-1] + " Index")))
