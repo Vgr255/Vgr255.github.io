@@ -6,7 +6,7 @@ NATIONALITY = "Finnish"
 
 ELEMENT = "Wind"
 
-CLASS = "Weaponsmitch"
+CLASS = "Weaponsmith"
 
 WEAPON = "Magically-crafted weapons"
 
