@@ -334,4 +334,4 @@ if __name__ == "__main__":
         elif name.startswith("generate"):
             items.append(func)
 
-    map(lambda f: f(), items)
+    [f() for f in items]
