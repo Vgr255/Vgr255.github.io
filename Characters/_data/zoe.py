@@ -30,6 +30,6 @@ BACKSTORY = ""
 
 HIGHLIGHTS = ""
 
-FAMILY = (("Fanny", "Sumansian sister"), ("???", "Sumansian brother"))
+FAMILY = (("Fanny", "Sumansian sister"), ("Akio", "Sumansian brother"))
 
 SUMMONS = ("Tritoch", "Unicorn", "Calamity", "Crusador", "Knights of the Round", "Golem")

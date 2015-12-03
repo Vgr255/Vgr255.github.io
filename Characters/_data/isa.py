@@ -30,6 +30,6 @@ BACKSTORY = "Isa, an orphan, was found stealing and robbing by Audrey, who broug
 
 HIGHLIGHTS = "When Audrey found out that they were being hunted down, she told Rachel, who then called Isa for support. Isa quickly and easily dispatched the dozens of people who came to kill her, and survived through a few rockets and countless bullets."
 
-FAMILY = (("Fanny", "Sumansian sister"), ("???", "Sumansian brother"))
+FAMILY = (("Fanny", "Sumansian sister"), ("Akio", "Sumansian brother"))
 
 SUMMONS = ("Calamity", "Cerberus", "Pandemonium", "Phantom", "Golem")
