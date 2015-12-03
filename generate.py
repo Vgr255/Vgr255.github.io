@@ -2,6 +2,7 @@
 
 import collections
 import importlib
+import datetime
 import os
 
 # Settings
@@ -31,6 +32,9 @@ ORDER = ("Name", "Nationality", "Element", "Class", "Weapon", "Birth", "Birth lo
          "Death", "Death location", "Letter", "Recruitment order", "S-Team Rank")
 
 TEXTS = ("Summary", "Abilities", "Backstory", "Highlights")
+
+MONTHS = (None, "January", "February", "March", "April", "May", "June",
+          "July", "August", "September", "October", "November", "December")
 
 CHARACTERS = {}
 
@@ -267,7 +271,7 @@ def parse_story():
         file = file[:-3]
         module = importlib.import_module("Story._data." + file)
 
-        STORY[file] = module.TITLE, module.DATA, getattr(module, "CHARACTERS", ())
+        STORY[file] = module.TITLE, module.DATETIME, module.DATA, getattr(module, "CHARACTERS", ())
 
         for char in getattr(module, "CHARACTERS", ()):
             STORIES[char].append(file)
@@ -277,14 +281,63 @@ def generate_story():
         with open(os.path.join(os.getcwd(), "Story", "{0}.html".format(part.capitalize())), "w", encoding="utf-8") as f:
             f.write(HEADER.format(STORY[part][0]))
             f.write("{0}{0}<h1>{1}</h1>\n".format(TAB, STORY[part][0]))
-            for line in STORY[part][1].splitlines():
+            date = STORY[part][1]
+            year = month = day = None
+            if isinstance(date, (datetime.datetime, datetime.date)):
+                year = date.year
+                month = date.month
+                day = date.day
+            elif hasattr(date, "__iter__") and not isinstance(date, (str, bytes, bytearray)):
+                _date = date
+                if date:
+                    year, *date = date
+                if date:
+                    month, *date = date
+                if date:
+                    day, *date = date
+                if date:
+                    date = " ".join(_date) # fall back to the original in any other case
+                    year = month = day = None
+            if all(x is None for x in (year, month, day)):
+                if date:
+                    f.write("{0}{0}<h2>Date: {1}</h2>\n".format(TAB, date))
+                else:
+                    f.write("{0}{0}<h2>Date: Unknown</h2>\n".format(TAB))
+            else:
+                datestr = []
+                if month is not None:
+                    if hasattr(month, "__int__"):
+                        datestr.append(MONTHS[month])
+                    else:
+                        datestr.append(str(month))
+
+                    if day is not None:
+                        day = str(day)
+                        if day in ("1", "21", "31"):
+                            day += "st"
+                        elif day in ("2", "22"):
+                            day += "nd"
+                        elif day in ("3", "23"):
+                            day += "rd"
+                        else:
+                            day += "th"
+                        datestr.append(day)
+
+                if year is not None:
+                    if month is not None:
+                        datestr[-1] += ","
+                    datestr.append(str(year))
+
+                f.write("{0}{0}<h2>Date: {1}</h2>\n".format(TAB, " ".join(datestr)))
+
+            for line in STORY[part][2].splitlines():
                 if not line:
                     continue
                 f.write("\n{0}{0}<p>{1}</p>\n".format(TAB, line))
 
             if STORY[part][2]:
                 f.write("\n{0}{0}<h2><b>Characters:</b></h2>\n{0}{0}<ul>\n".format(TAB))
-                for char in STORY[part][2]:
+                for char in STORY[part][3]:
                     f.write(STORY_LINE.format("../Characters/{0}".format(CHARACTERS[char][0]), char))
                 f.write("{0}{0}</ul>\n".format(TAB))
             else:
