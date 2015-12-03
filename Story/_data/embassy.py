@@ -7,10 +7,12 @@ TITLE = "Passage at the Embassy (Evelyn's origins)"
 
 CHARACTERS = ("Evelyn", "Brandon", "Victor Morika", "Luke Walker", "Zoe")
 
+DATETIME = "1980"
+
 DATA = """
 
 Set: Near an unknown embassy, in the parking lot. Victor Morika is fighting with two people, a couple of a man and a woman. \
-Surrounding the embassy is a seemingly-endless and tall forest. The year is 1980.
+Surrounding the embassy is a seemingly-endless and tall forest.
 
 Morika had just knocked the man out on the ground. Quickly, he runs towards the couple's daughter, who had been \
 watching aside for the whole time, grabs her arm, and proceeds to run towards the embassy.

@@ -5,9 +5,11 @@ TITLE = "Exchanging data and Xu's first appearance"
 
 CHARACTERS = ("Luke Walker", "Phaleën", "Xu")
 
+DATETIME = "2014"
+
 DATA = """
 
-Set: In a crowded place in Moscow, near a small cafe, surrounded by skyscrapers. The year is 2014.
+Set: In a crowded place in Moscow, near a small cafe, surrounded by skyscrapers.
 
 Phaleën is sitting at a table, and had just ordered a coffee for himself. He has a laptop case next to \
 him and is waiting for someone. A few kilometers away, Luke Walker is sitting in front of a computer in \
