@@ -1,6 +1,6 @@
-FILE = "Noemie"
+FILE = "Noemye"
 
-NAME = "Noémie"
+NAME = "Noémye"
 
 NATIONALITY = "Canadian"
 
