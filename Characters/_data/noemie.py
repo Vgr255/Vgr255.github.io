@@ -4,7 +4,7 @@ NAME = "Noémye"
 
 NATIONALITY = "Canadian"
 
-CLASS = "Fighter"
+CLASS = "Dragoon"
 
 WEAPON = "Her fists"
 

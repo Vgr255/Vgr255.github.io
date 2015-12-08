@@ -4,7 +4,7 @@ NAME = "Audrey"
 
 NATIONALITY = "American"
 
-CLASS = "Dragoon"
+CLASS = "Fighter"
 
 WEAPON = "Gungnir"
 
