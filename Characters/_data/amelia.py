@@ -10,7 +10,7 @@ CLASS = "Runner"
 
 WEAPON = "Twin Sisters"
 
-BIRTH = "February 15th, 1992"
+BIRTH = "February 15th, 1982"
 
 BIRTH_LOCATION = ""
 
@@ -32,6 +32,6 @@ BACKSTORY = ""
 
 HIGHLIGHTS = ""
 
-FAMILY = (("Jeremy Alexander", "Sumansian twin / Boyfriend"), ("Arya Alexander", "Daughter"))
+FAMILY = (("Jeremy Alexander", "Sumansian twin / Boyfriend"), ("Simon Rookwell", "Brother"), ("Marisa Merkel", "Sister"), ("Ghi Martin", "Father"), ("Rachel", "Mother"), ("Arya Alexander", "Daughter"))
 
 SUMMONS = ("Ramuh", "Quetzal", "Ixion", "Phantom", "Ark")

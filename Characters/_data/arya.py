@@ -30,6 +30,6 @@ BACKSTORY = "She secretly joins <i>them</i> after her father died, as well as Li
 
 HIGHLIGHTS = "When her father died in <b>The Great Battle</b>, she went into the Void with Gerald, Liakin and Marisa. She found him, but he had no idea who she was. Quan, however, remembered, and managed to get Zoe to recruit her, due to her extreme potential. She can summon the most powerful creature all by herself. During The Invasion, she chases the summoner downtown, and blocks him before he can escape."
 
-FAMILY = (("Jeremy Alexander", "Father"), ("Amelia Bater", "Mother"))
+FAMILY = (("Jeremy Alexander", "Father"), ("Amelia Bater", "Mother"), ("Simon Rookwell", "Uncle"), ("Marisa Merkel", "Aunt"), ("Ghi Martin", "Grandfather"), ("Rachel", "Grandmother"))
 
 SUMMONS = ("Alexander", "Zeromus", "Dragon", "Eden")

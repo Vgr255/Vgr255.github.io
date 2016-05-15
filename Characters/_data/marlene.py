@@ -26,4 +26,6 @@ BACKSTORY = ""
 
 HIGHLIGHTS = ""
 
+FAMILY = (("Ashlyn Cormier", "Niece"), ("Eric Cormier", "Nephew"))
+
 SUMMONS = ("Golem",)

@@ -2,13 +2,13 @@ FILE = "Rachel"
 
 NAME = "Rachel"
 
-NATIONALITY = "Danish"
+NATIONALITY = "Sumansian"
 
-CLASS = "Erudite"
+CLASS = "Goddess"
 
 WEAPON = "Focused energy projectiles"
 
-BIRTH = "June 17th, 1952"
+BIRTH = "June 17th, -1546"
 
 BIRTH_LOCATION = "Alexandria, Romania, Earth"
 
@@ -23,6 +23,8 @@ ABILITIES = "She can learn pretty much anything just by looking at it for a bit.
 BACKSTORY = "Not much is known about her past, but she is one of the oldest members of them. She got in the ICS when it was founded from request of Victor Morika, as an operator for the command center. She remains present there for years, up to <b>The Invasion</b>, where the ICS gets destroyed and she goes back into the Void."
 
 HIGHLIGHTS = "During <b>The Dismantlement</b>, as she received the call from Audrey and both she and Liakin got killed, she took over control of the command center, contacted Isa, and got her to go save Arya. She is one of the two masterminds of <i>them</i>, along with Quan."
+
+FAMILY = (("Jeremy Alexander", "Son"), ("Amelia Bater", "Daughter"), ("Simon Rookwell", "Son"), ("Marisa Merkel", "Daughter"), ("Arya Alexander", "Granddaughter"))
 
 SUMMONS = ("Baalberith", "Bahamut Kai", "Tonberry", "Tritoch", "Palidor")
 

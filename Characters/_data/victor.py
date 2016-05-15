@@ -28,4 +28,6 @@ BACKSTORY = ""
 
 HIGHLIGHTS = ""
 
+FAMILY = (("Ashlyn Cormier", "Daughter"), ("Eric Cormier", "Son"))
+
 SUMMONS = ("Dragon", "Tonberry", "Griever", "Zona")

@@ -30,4 +30,6 @@ BACKSTORY = "While he was still an infant, a serial killer came to kill him. His
 
 HIGHLIGHTS = "After The End, Ghi and Katelyn were brought back to the Void, only as infants. They then went back on Earth, where he atoned for his actions by joining the other Sumansians in their team, and fighting along them."
 
+FAMILY = (("Jeremy Alexander", "Son"), ("Amelia Bater", "Daughter"), ("Simon Rookwell", "Son"), ("Marisa Merkel", "Daughter"), ("Arya Alexander", "Granddaughter"))
+
 SUMMONS = ("Hades", "Helltrain", "Siren", "Odin", "Carbuncle")

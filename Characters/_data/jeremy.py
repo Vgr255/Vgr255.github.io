@@ -32,6 +32,6 @@ BACKSTORY = "He was living in Manhattan with his girlfriend Emily as a taxi driv
 
 HIGHLIGHTS = "During the battle against Ghi's forces in 2026, he single-handedly defeated most of them, and helped Marisa create a wall to protect the ICS' forces while Katelyn and Ghi clashed. During The Great Battle in 2034, he managed to hold back most of the enemies and gained time while Simon and his squad were moving in position. He also led <i>them</i> to help Arya after Gerald sought their help."
 
-FAMILY = (("Amelia Bater", "Sumansian twin / Girlfriend"), ("Arya Alexander", "Daughter"))
+FAMILY = (("Amelia Bater", "Sumansian twin / Girlfriend"), ("Simon Rookwell", "Brother"), ("Marisa Merkel", "Sister"), ("Ghi Martin", "Father"), ("Rachel", "Mother"), ("Arya Alexander", "Daughter"))
 
 SUMMONS = ("Ifrit", "Phoenix", "Rubicante", "Griever")

@@ -8,7 +8,7 @@ CLASS = ""
 
 WEAPON = ""
 
-BIRTH = "November 10th, 2011"
+BIRTH = "November 10th, 1913"
 
 BIRTH_LOCATION = "Madison, Mississippi, USA, Earth"
 
@@ -26,6 +26,6 @@ BACKSTORY = ""
 
 HIGHLIGHTS = ""
 
-FAMILY = (("Michael Cormier", "Father"),)
+FAMILY = (("Michael Cormier", "Father"), ("Victor Morika", "Father"), ("Marlene", "Aunt"))
 
 SUMMONS = ()

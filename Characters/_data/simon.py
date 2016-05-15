@@ -32,4 +32,6 @@ BACKSTORY = "He was recruited by Ghi before the ICS could find him, and he becam
 
 HIGHLIGHTS = "During <b>The Great Battle</b>, Simon and some of Ghi's former mercenaries infiltrate the base of the enemy to go and kill the resistance. However, the base explodes and no one survives, save for Simon who got back in the Void, except a few years younger by then."
 
+FAMILY = (("Jeremy Alexander", "Brother"), ("Amelia Bater", "Sister"), ("Arya Alexander", "Niece"), ("Ghi Martin", "Father"), ("Rachel", "Mother"))
+
 SUMMONS = ("Bismark", "Cagnazzo", "Odin", "Leviathan", "Gilgamesh")

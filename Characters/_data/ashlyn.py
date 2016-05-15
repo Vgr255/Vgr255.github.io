@@ -8,7 +8,7 @@ CLASS = "Summoner"
 
 WEAPON = "Magical Creatures"
 
-BIRTH = "November 10th, 2011"
+BIRTH = "November 10th, 1913"
 
 BIRTH_LOCATION = "Madison, Mississippi, USA, Earth"
 
@@ -28,7 +28,7 @@ BACKSTORY = "Her father, Michael Cormier, was part of the HLCF (which later beca
 
 HIGHLIGHTS = "Ashlyn is the one who keeps all the creatures away from their home, in the Void. She can also summon them to come to their aid, most of the time."
 
-FAMILY = (("Michael Cormier", "Father"),)
+FAMILY = (("Michael Cormier", "Father"), ("Victor Morika", "Father"), ("Marlene", "Aunt"))
 
 SUMMONS = ("Carbuncle", "Starlet", "Calcabrina", "Zona", "Knights of the Round", "Astaroth", "Bahamut Kai",
            "Calamity", "Crusador", "Rubicante", "Shankara", "Sylph", "Kjata", "Siren", "Quetzal",

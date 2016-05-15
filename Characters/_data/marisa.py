@@ -32,6 +32,6 @@ BACKSTORY = ""
 
 HIGHLIGHTS = ""
 
-FAMILY = (("Anabella Liakin", "Girlfriend"),)
+FAMILY = (("Jeremy Alexander", "Brother"), ("Amelia Bater", "Sister"), ("Ghi Martin", "Father"), ("Rachel", "Mother"), ("Arya Alexander", "Niece"), ("Anabella Liakin", "Girlfriend"))
 
 SUMMONS = ("Asura", "Kirin", "Sylph", "Bahamut", "Ark")
